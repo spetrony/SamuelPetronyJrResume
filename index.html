@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Samuel Petrony, Jr. · AI Enablement &amp; Adoption</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--serif:'Instrument Serif',serif;--mono:'IBM Plex Mono',monospace;--sans:'IBM Plex Sans',system-ui,sans-serif;--panel:transparent;--panel-shadow:none;--panel-m:0;--bevel:none;--hdr-bg:var(--bg);--hdr-fg:var(--text);--hdr-ink:var(--ink);--btn-bg:transparent;--btn-fg:var(--text);--link:var(--accent);--bg:#FFFFFF;--surface:#F4F6FA;--ink:#0B2560;--text:#1E2633;--muted:#556070;--accent:#0B45B5;--on-accent:#FFFFFF;--line:#DCE1EA;--rule:#0B2560;}
+:root[data-theme="retro"]{--serif:'Times New Roman',Times,serif;--mono:'Courier New',Courier,monospace;--sans:Verdana,Tahoma,Geneva,sans-serif;--bg:#008080;--panel:#C0C0C0;--surface:#FFFFFF;--ink:#000080;--text:#000000;--muted:#3A3A3A;--accent:#000080;--on-accent:#FFFFFF;--line:#808080;--rule:#000080;--link:#0000EE;--panel-m:20px;--panel-shadow:inset -1px -1px 0 #000,inset 1px 1px 0 #fff,inset -2px -2px 0 #808080,inset 2px 2px 0 #DFDFDF;--bevel:inset -1px -1px 0 #000,inset 1px 1px 0 #fff,inset -2px -2px 0 #808080,inset 2px 2px 0 #DFDFDF;--hdr-bg:linear-gradient(90deg,#000080,#1084D0);--hdr-fg:#FFFFFF;--hdr-ink:#FFFFFF;--btn-bg:#C0C0C0;--btn-fg:#000000;}
+:root[data-theme="dark"]{--bg:#0B111C;--surface:#131A27;--ink:#E9EDF4;--text:#C8D0DC;--muted:#8D97A8;--accent:#6E9BFF;--on-accent:#0B111C;--line:#253042;--rule:#E9EDF4;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;transition:background .25s,color .25s;}
+a{color:var(--link);text-decoration:underline;text-underline-offset:3px;}
+a:hover{color:var(--ink);}
+*{box-sizing:border-box;}
+img{display:block;max-width:100%;}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--bg);color:var(--text);transition:background .25s,color .25s;">
+
+  <header style="position:sticky;top:0;z-index:10;background:var(--hdr-bg);border-bottom:1px solid var(--line);transition:background .25s;">
+    <div style="max-width:1200px;margin:0 auto;padding:14px clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <a href="#top" style="font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--hdr-ink);text-decoration:none;font-weight:600;">Samuel Petrony, Jr.</a>
+        <a href="mailto:spetrony680@gmail.com" style="font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--hdr-fg);">spetrony680@gmail.com</a>
+      </div>
+      <nav style="display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;">
+        <a href="#about" style="color:var(--hdr-fg);">About</a>
+        <a href="#experience" style="color:var(--hdr-fg);">Experience</a>
+        <a href="#expertise" style="color:var(--hdr-fg);">Expertise</a>
+        <a href="#work" style="color:var(--hdr-fg);">Projects</a>
+        <a href="#contact" style="color:var(--hdr-fg);">Contact</a>
+      </nav>
+      <div role="group" aria-label="Color theme" style="display:flex;border:1px solid var(--line);">
+        <button onClick="{{ setLight }}" aria-pressed="{{ isLight }}" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;padding:9px 16px;border:0;cursor:pointer;background:{{ lightBg }};color:{{ lightFg }};box-shadow:var(--bevel);">LIGHT</button>
+        <button onClick="{{ setDark }}" aria-pressed="{{ isDark }}" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;padding:9px 16px;border:0;cursor:pointer;background:{{ darkBg }};color:{{ darkFg }};box-shadow:var(--bevel);">DARK</button>
+        <button onClick="{{ setRetro }}" aria-pressed="{{ isRetro }}" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;padding:9px 16px;border:0;cursor:pointer;background:{{ retroBg }};color:{{ retroFg }};box-shadow:var(--bevel);">RETRO</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" style="max-width:1200px;margin:var(--panel-m) auto 0;background:var(--panel);box-shadow:var(--panel-shadow);padding:0 clamp(20px,4vw,48px);">
+
+    <section style="padding:clamp(48px,8vw,96px) 0 40px;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-end;">
+      <div style="display:flex;flex-direction:column;gap:22px;flex:2 1 460px;min-width:0;">
+        <div style="font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);line-height:1.8;">AI Enablement &amp; Adoption · Nashville, TN</div>
+        <h1 style="margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(48px,7.5vw,104px);line-height:.95;letter-spacing:-.01em;color:var(--ink);text-wrap:balance;">Samuel Petrony, Jr.</h1>
+        <p style="margin:0;font-family:var(--serif);font-size:clamp(24px,2.6vw,34px);line-height:1.2;color:var(--ink);max-width:24ch;font-style:italic;text-wrap:pretty;">Moving organizations from interest in AI to measurable capability.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:6px;">
+          <a href="mailto:spetrony680@gmail.com" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:13px 20px;box-shadow:var(--bevel);background:var(--accent);color:var(--on-accent);" style-hover="opacity:.88;">Email me</a>
+          <a href="https://linkedin.com/in/sampetronyjr" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:12px 19px;border:1px solid var(--line);background:var(--btn-bg);box-shadow:var(--bevel);color:var(--ink);" style-hover="border-color:var(--ink);">LinkedIn</a>
+          <a href="assets/Resume_Samuel_Petrony_Jr_2026.pdf" onClick="{{ downloadResume }}" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:12px 19px;border:1px solid var(--line);background:var(--btn-bg);box-shadow:var(--bevel);color:var(--ink);" style-hover="border-color:var(--ink);">Résumé PDF ↓</a>
+        </div>
+      </div>
+      <figure style="margin:0;min-width:0;flex:1.4 1 360px;display:flex;flex-direction:column;gap:12px;">
+        <img src="assets/speaking.jpg" alt="Samuel presenting AI Adoption Unlocked at the Nashville Technology Council Innovation Summit" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:70% center;">
+        <figcaption style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.6;">“AI Adoption Unlocked” · Nashville Technology Council Innovation Summit</figcaption>
+      </figure>
+    </section>
+
+    <div style="height:2px;background:var(--rule);"></div>
+
+
+
+    <section id="about" style="padding:88px 0 24px;scroll-margin-top:72px;">
+      <button onClick="{{ tog_about }}" aria-expanded="{{ open_about }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:40px;;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
+        <h2 style="margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--ink);">About</h2>
+      
+        <span style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:10px 16px;box-shadow:var(--bevel);align-self:center;flex:0 0 auto;white-space:nowrap;" style-hover="opacity:.88;">{{ lbl_about }}</span>
+      </button>
+      <sc-if value="{{ open_about }}" hint-placeholder-val="{{ true }}">
+      <p style="margin:0 0 56px;font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);line-height:1.3;color:var(--ink);max-width:36ch;text-wrap:pretty;">I bridge the gap between enterprise AI strategy and operational adoption. As an AI Enablement and Adoption Lead, I move organizations past the “interest” phase into measurable capability.</p>
+      <p style="margin:-32px 0 56px;font-size:17px;line-height:1.65;max-width:64ch;text-wrap:pretty;">I built a global AI Champions Program from an executive directive into a thriving community. My focus is equipping professionals to discover high-value use cases, apply governance, and integrate AI seamlessly into complex workflows.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px 48px;">
+        <div style="display:flex;flex-direction:column;gap:14px;border-top:2px solid var(--rule);padding-top:18px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">AI Enablement &amp; Adoption</div>
+          
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;">
+            <li><strong style="font-weight:600;color:var(--ink);">Program Architecture:</strong> Design AI enablement curricula, peer-led learning, and global champion networks.</li>
+            <li><strong style="font-weight:600;color:var(--ink);">Structured Prompting:</strong> Train teams on replicable prompting (Goal, Context, Sources, Expectations) to reduce hallucination risk.</li>
+            <li><strong style="font-weight:600;color:var(--ink);">Change Management:</strong> Drive enterprise adoption via structured training and continuous feedback loops.</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;border-top:2px solid var(--rule);padding-top:18px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Governance, Risk &amp; Data Readiness</div>
+          
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;">
+            <li><strong style="font-weight:600;color:var(--ink);">Responsible AI:</strong> Translate fairness, reliability, safety, privacy, transparency, and accountability into actionable guidelines.</li>
+            <li><strong style="font-weight:600;color:var(--ink);">Data Readiness:</strong> Advocate for data hygiene and permission-aware environments to enable retrieval-augmented generation (RAG).</li>
+            <li><strong style="font-weight:600;color:var(--ink);">Cost Stewardship:</strong> Optimize compute spend and manage token economics by right-sizing AI tools to the specific task.</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;border-top:2px solid var(--rule);padding-top:18px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Enterprise AI Strategy &amp; Architecture</div>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:var(--muted);text-wrap:pretty;">While my current execution focuses heavily on enablement and adoption, I bring comprehensive, certified expertise in architecting enterprise AI scaling strategies:</p>
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;">
+            <li><strong style="font-weight:600;color:var(--ink);">Platform Strategy:</strong> Deep understanding of the “Buy vs. Extend vs. Build” decision framework, evaluating when to deploy turnkey copilots, leverage low-code platforms like Copilot Studio, or develop custom pro-code solutions.</li>
+            <li><strong style="font-weight:600;color:var(--ink);">Agentic Workflows:</strong> Expertise in designing architectures that transition organizations toward autonomous digital teammates and multi-agent orchestration within human-in-the-loop guardrails.</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;border-top:2px solid var(--rule);padding-top:18px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Credentials &amp; Industry Engagement</div>
+          
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;">
+            <li>MS in Data Analytics, Southern New Hampshire University</li>
+            <li>Microsoft Certified: AI Transformation Leader</li>
+            <li>Generative AI Leadership Certificate, Vanderbilt University</li>
+            <li>Completed UNESCO Global MOOC on the Ethics of AI</li>
+            <li>2026 NTC Emerging Leaders in Technology (ELITE) Cohort</li>
+            <li>Speaker: “AI Adoption Unlocked” (2025 NTC Innovation Summit)</li>
+          </ul>
+        </div>
+      </div>
+      </sc-if>
+    </section>
+
+    <section id="experience" style="padding:88px 0 24px;scroll-margin-top:72px;">
+      <button onClick="{{ tog_experience }}" aria-expanded="{{ open_experience }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:8px;;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
+        <h2 style="margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--ink);">Experience</h2>
+      
+        <span style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:10px 16px;box-shadow:var(--bevel);align-self:center;flex:0 0 auto;white-space:nowrap;" style-hover="opacity:.88;">{{ lbl_experience }}</span>
+      </button>
+      <sc-if value="{{ open_experience }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-wrap:wrap;gap:12px 48px;padding:24px 0;border-bottom:1px solid var(--line);">
+        <div style="display:flex;flex-direction:column;gap:6px;flex:1 1 220px;padding-top:14px;">
+          <div style="font-family:var(--serif);font-size:30px;line-height:1.1;color:var(--ink);">AllianceBernstein</div>
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);">Nashville, TN · 2021 – Present</div>
+        </div>
+        <div style="flex:3 1 460px;display:flex;flex-direction:column;min-width:0;">
+          <div style="display:flex;flex-direction:column;">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Associate Officer, IMO Strategic Solutions Analyst</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">AUG 2026 – PRESENT</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Spearhead AI enablement and adoption initiatives across the Global Technology &amp; Operations (GTO) division.</li>
+                <li>Lead the enterprise AI Champions Program, driving generative AI adoption through structured change management, targeted training, and peer-led learning.</li>
+                <li>Execute end-to-end automation projects utilizing low-code and enterprise AI platforms to eliminate manual operational work globally.</li>
+              </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--line);">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Associate Officer, Business Analyst, Derivative Operations</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">FEB 2025 – AUG 2026</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Designed and deployed the foundational AI Champions pilot, establishing the program’s strategic roadmap and training curriculum.</li>
+                <li>Delivered targeted generative AI use-case training sessions to directly accelerate operational adoption.</li>
+                <li>Reengineered and automated manual workflows end-to-end leveraging enterprise AI and low-code platforms.</li>
+                <li>Partnered with organizational leadership to scope process automation opportunities and implement Power BI reporting tools.</li>
+                <li>Presented “AI Adoption Unlocked” at the Nashville Technology Council’s Innovation Summit.</li>
+              </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--line);">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Associate Officer, Derivative Reconciliation Analyst</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">AUG 2024 – FEB 2025</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Integrated generative AI solutions directly into daily operational workflows, significantly cutting manual effort and improving reporting accuracy.</li>
+                <li>Applied LLM prompt engineering techniques to accelerate complex analysis and efficiently resolve operational discrepancies.</li>
+                <li>Directed end-to-end process automation initiatives.</li>
+                <li>Established data readiness for AI by building semantic data models, replacing legacy Excel reporting with scalable, automated Power BI dashboards for executive decision-makers.</li>
+                <li>Streamlined workflows and mitigated risk through applied data analytics best practices.</li>
+              </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--line);">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Analyst, Derivative Reconciliation</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">NOV 2022 – AUG 2024</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Pioneered early AI adoption by developing a Lunch and Learn series, empowering peers to explore and implement available AI tools.</li>
+                <li>Leveraged LLM prompt engineering to accelerate root-cause analysis and streamline documentation processes.</li>
+                <li>Laid the digital groundwork for future AI integrations by automating legacy workflows using VBA.</li>
+                <li>Built robust data models, executive monitoring dashboards, and Power BI visuals to support data-driven decision-making.</li>
+                <li>Led cross-functional process improvement initiatives that mitigated process risk.</li>
+              </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--line);">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Analyst, OTC Collateral</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">JUL 2021 – NOV 2022</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Partnered cross-functionally with technology teams to optimize and improve collateral and reconciliation systems.</li>
+                <li>Led comprehensive onboarding, mentorship, and training programs for incoming team members.</li>
+                <li>Produced critical collateral reporting to support enterprise risk management while running daily margining on OTC exposure.</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 48px;padding:24px 0;border-bottom:1px solid var(--line);">
+        <div style="display:flex;flex-direction:column;gap:6px;flex:1 1 220px;padding-top:14px;">
+          <div style="font-family:var(--serif);font-size:30px;line-height:1.1;color:var(--ink);">Earlier career</div>
+          
+        </div>
+        <div style="flex:3 1 460px;display:flex;flex-direction:column;min-width:0;">
+          <div style="display:flex;flex-direction:column;">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Leasing Manager · McMahon Truck Leasing</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">SEP 2019 – JUL 2021</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Built and deployed automated quote generators in Excel, significantly cutting manual pricing workloads and increasing efficiency.</li>
+                <li>Leveraged data analytics to optimize inventory forecasting and utilized GIS tools to sharpen sales prospecting.</li>
+                <li>Conducted P&amp;L and market trend analysis to guide strategic pricing decisions, find competitive advantages, and launch new products.</li>
+                <li>Structured complex contracts and consistently presented data-driven solutions to clients.</li>
+              </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--line);">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Account Manager · Star Leasing Company</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">JUN 2018 – AUG 2019</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Led digital marketing initiatives, actively using campaign data to track and improve engagement.</li>
+                <li>Built Excel heat maps to visualize complex data sets and optimize resource allocation.</li>
+                <li>Developed data-driven operational fleet strategies, ran P&amp;L analysis, and presented analytical solutions to clients.</li>
+              </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--line);">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Account Manager, Commercial Truck Division · Enterprise Rent-A-Car</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">SEP 2016 – JUN 2018</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Used market data to design targeted B2B rental programs, successfully growing the fleet by 62% through local partnerships.</li>
+                <li>Launched a new branch in a role created specifically to drive market expansion while managing full sales cycles.</li>
+              </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;border-top:1px solid var(--line);">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Assistant Branch Manager, Commercial Truck Division · Enterprise Rent-A-Car</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">MAR 2016 – SEP 2016</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Managed P&amp;L and daily operations for one of the highest-volume U.S. Commercial Truck branches.</li>
+                <li>Leveraged historical demand data to plan fleet capacity and utilized customer feedback data to achieve top-tier national satisfaction ratings.</li>
+                <li>Applied strict risk controls and structured client contracts to protect business operations.</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 48px;padding:24px 0;">
+        <div style="display:flex;flex-direction:column;gap:6px;flex:1 1 220px;padding-top:14px;">
+          <div style="font-family:var(--serif);font-size:30px;line-height:1.1;color:var(--ink);">Volunteering</div>
+          
+        </div>
+        <div style="flex:3 1 460px;display:flex;flex-direction:column;min-width:0;">
+          <div style="display:flex;flex-direction:column;">
+            <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:20px 0 10px;">
+              <span style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;flex:1;min-width:0;">
+                <span style="font-size:18px;font-weight:600;color:var(--ink);font-family:var(--sans);">Volunteer Data Analyst · MLK Magnet High School Cross Country</span>
+                <span style="font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--accent);white-space:nowrap;">2026 – PRESENT</span>
+              </span>
+            </div>
+              <ul style="margin:0;padding:0 0 24px 18px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.6;">
+                <li>Support my son’s team as its data analyst.</li>
+                <li>Automate race-result extraction into Google Sheets with Claude Cowork.</li>
+                <li>Built z-score models that normalize course conditions so coaches can compare athletes fairly. <a href="#work">See the XC Bell Curve ↓</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+    </section>
+
+    <section id="expertise" style="padding:88px 0 24px;scroll-margin-top:72px;">
+      <button onClick="{{ tog_expertise }}" aria-expanded="{{ open_expertise }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:40px;;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
+        <h2 style="margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--ink);">Expertise</h2>
+      
+        <span style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:10px 16px;box-shadow:var(--bevel);align-self:center;flex:0 0 auto;white-space:nowrap;" style-hover="opacity:.88;">{{ lbl_expertise }}</span>
+      </button>
+      <sc-if value="{{ open_expertise }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:32px;">
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--rule);padding-top:18px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Enablement &amp; Adoption</div>
+          <p style="margin:0;font-size:16px;line-height:1.6;">Program architecture, AI Champion networks, peer-led learning, structured prompting, change management.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--rule);padding-top:18px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Governance &amp; Data Readiness</div>
+          <p style="margin:0;font-size:16px;line-height:1.6;">Responsible AI guidelines, permission-aware data governance.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;border-top:2px solid var(--rule);padding-top:18px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">Strategy &amp; Architecture</div>
+          <p style="margin:0;font-size:16px;line-height:1.6;">Buy vs. Extend vs. Build, agentic workflows with human-in-the-loop guardrails.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;padding-top:56px;">
+        <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);">Tools</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px 32px;">
+          <sc-for list="{{ toolGroups }}" as="g" hint-placeholder-count="6">
+            <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:14px;">
+              <div style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);">{{ g.brand }}</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <sc-for list="{{ g.items }}" as="t" hint-placeholder-count="3">
+                  <span style="font-family:var(--mono);font-size:13px;padding:7px 12px;border:1px solid var(--line);color:var(--ink);background:var(--surface);">{{ t }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px;padding-top:64px;">
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-bottom:12px;">Certifications</div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);flex-wrap:wrap;"><span style="font-weight:600;color:var(--ink);">Microsoft Certified: AI Transformation Leader</span><span style="font-family:var(--mono);font-size:12px;color:var(--muted);">MICROSOFT</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);flex-wrap:wrap;"><span style="font-weight:600;color:var(--ink);">Generative AI Leadership &amp; Strategy</span><span style="font-family:var(--mono);font-size:12px;color:var(--muted);">VANDERBILT · 2024</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);flex-wrap:wrap;"><span style="font-weight:600;color:var(--ink);">Prompt Engineering Specialization</span><span style="font-family:var(--mono);font-size:12px;color:var(--muted);">VANDERBILT · 2023</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);flex-wrap:wrap;"><span style="font-weight:600;color:var(--ink);">Global MOOC on the Ethics of AI</span><span style="font-family:var(--mono);font-size:12px;color:var(--muted);">UNESCO</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-bottom:12px;">Education</div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);flex-wrap:wrap;"><span style="font-weight:600;color:var(--ink);">M.S., Data Analytics</span><span style="font-family:var(--mono);font-size:12px;color:var(--muted);">SOUTHERN NEW HAMPSHIRE UNIV.</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);flex-wrap:wrap;"><span style="font-weight:600;color:var(--ink);">B.A., Criminal Justice</span><span style="font-family:var(--mono);font-size:12px;color:var(--muted);">UNIV. OF NEVADA, LAS VEGAS</span></div>
+        </div>
+      </div>
+      </sc-if>
+    </section>
+
+    <section id="work" style="padding:88px 0 24px;scroll-margin-top:72px;">
+      <button onClick="{{ tog_work }}" aria-expanded="{{ open_work }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:40px;;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
+        <h2 style="margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--ink);">Personal AI projects</h2>
+        <div style="font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-left:auto;">A sample of solutions built for my own use</div>
+        <span style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:10px 16px;box-shadow:var(--bevel);align-self:center;flex:0 0 auto;white-space:nowrap;" style-hover="opacity:.88;">{{ lbl_work }}</span>
+      </button>
+      <sc-if value="{{ open_work }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:40px 32px;">
+
+        <a href="https://spetrony.github.io/XCBellCurce/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--text);" style-hover="color:var(--text);">
+          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="assets/xc-bell-curve.png" alt="Cross country z-score bell curve visualization" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left;transition:transform .5s;"></div>
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">01 · Claude Cowork · Data</div>
+          <h3 style="margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;color:var(--ink);">XC Bell Curve</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty;">Helping my son and his teammates understand race performance beyond their times. Z-scores normalize course conditions so every runner sees where they sit in the field.</p>
+          <span style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);text-decoration:underline;text-underline-offset:4px;">View project →</span>
+        </a>
+
+        <a href="https://spetrony.github.io/AB731StudyGuide/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--text);" style-hover="color:var(--text);">
+          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="assets/ab731.png" alt="AB-731 interactive study guide" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left;"></div>
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">02 · Claude Cowork · Learning</div>
+          <h3 style="margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;color:var(--ink);">AB-731 Study Guide</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty;">My study materials for the Microsoft Certified: AI Transformation Leader exam, turned into an interactive guide with domain breakdowns, flashcards, a practice quiz and glossary.</p>
+          <span style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);text-decoration:underline;text-underline-offset:4px;">View project →</span>
+        </a>
+
+        <a href="https://spetrony.github.io/ISS-Orbit-Animation/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--text);" style-hover="color:var(--text);">
+          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="assets/iss-orbit.png" alt="3D International Space Station orbit animation" style="width:100%;aspect-ratio:3/2;object-fit:cover;"></div>
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">03 · Claude Design · Just for fun</div>
+          <h3 style="margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;color:var(--ink);">ISS Orbit Animation</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty;">An interactive 3D model of the International Space Station in low Earth orbit — built because I love space exploration and technology. Drag to orbit, follow the ISS, zoom in.</p>
+          <span style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);text-decoration:underline;text-underline-offset:4px;">View project →</span>
+        </a>
+
+        <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7487214012745588738/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--text);" style-hover="color:var(--text);">
+          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="assets/gemini-scifi.png" alt="1950s sci-fi style video still: Samuel in a mind-reader helmet with the caption AI is not a mind reader" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 28%;"></div>
+          <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">04 · Google Gemini · Video</div>
+          <h3 style="margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;color:var(--ink);">AI Is Not a Mind Reader</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty;">A short, 1950s sci-fi-themed, AI-generated video, using my own likeness and voice, as a fun way to explain why the Goal, Context, Sources, Expectations prompting framework matters when working with LLMs.</p>
+          <span style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);text-decoration:underline;text-underline-offset:4px;">Watch on LinkedIn →</span>
+        </a>
+
+      </div>
+      </sc-if>
+    </section>
+
+    <section id="contact" style="padding:104px 0 64px;scroll-margin-top:72px;">
+      <div style="height:2px;background:var(--rule);margin-bottom:48px;"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:24px;flex:1 1 420px;min-width:0;">
+        <a href="mailto:spetrony680@gmail.com" style="font-family:var(--serif);font-size:clamp(28px,3vw,40px);line-height:1.1;color:var(--ink);text-decoration:none;word-break:break-word;" style-hover="color:var(--accent);">spetrony680@gmail.com</a>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;">
+          <a href="https://linkedin.com/in/sampetronyjr" target="_blank" rel="noopener">linkedin.com/in/sampetronyjr</a>
+          <a href="assets/Resume_Samuel_Petrony_Jr_2026.pdf" onClick="{{ downloadResume }}">Download résumé</a>
+          <span style="color:var(--muted);">Nashville, TN</span>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top:1px solid var(--line);max-width:1200px;margin:0 auto;background:var(--panel);box-shadow:var(--panel-shadow);">
+    <div style="max-width:1200px;margin:0 auto;padding:20px clamp(20px,4vw,48px);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);">
+      <span>© 2026 Samuel Petrony, Jr.</span>
+      <sc-if value="{{ isRetro }}" hint-placeholder-val="{{ false }}">
+        <span style="display:flex;gap:10px;align-items:center;">Visitors <span style="font-family:var(--mono);background:#000;color:#39FF14;padding:2px 8px;letter-spacing:.2em;">000731</span></span>
+        <span>Best viewed at 800 × 600</span>
+      </sc-if>
+      <span>Designed with Claude Design</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;system&quot;,&quot;light&quot;,&quot;dark&quot;,&quot;retro&quot;],&quot;default&quot;:&quot;system&quot;,&quot;tsType&quot;:&quot;'system'|'light'|'dark'|'retro'&quot;}}">
+class Component extends DCLogic {
+  state = { theme: null, closed: {} };
+  secs = ['about','experience','expertise','work'];
+  componentDidMount() {
+    let t = null;
+    try { t = localStorage.getItem('sp-portfolio-theme'); } catch (e) {}
+    if (!t) {
+      const d = this.props.defaultTheme ?? 'system';
+      t = d === 'system' ? (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : d;
+    }
+    this.apply(t, false);
+  }
+  apply(t, save) {
+    document.documentElement.setAttribute('data-theme', t);
+    if (save) { try { localStorage.setItem('sp-portfolio-theme', t); } catch (e) {} }
+    this.setState({ theme: t });
+  }
+  renderVals() {
+    const t = this.state.theme || 'light';
+    const on = { bg: 'var(--accent)', fg: 'var(--on-accent)' }, off = { bg: 'var(--btn-bg)', fg: 'var(--btn-fg)' };
+    const st = k => (t === k ? on : off);
+    const sv = {};
+    this.secs.forEach(id => {
+      const o = !this.state.closed[id];
+      sv['open_' + id] = o; sv['lbl_' + id] = o ? 'Collapse  ▲' : 'Expand  ▼';
+      sv['tog_' + id] = () => this.setState(st => ({ closed: { ...st.closed, [id]: !st.closed[id] } }));
+    });
+    return {
+      ...sv,
+      downloadResume: (e) => {
+        e.preventDefault();
+        const url = new URL('assets/Resume_Samuel_Petrony_Jr_2026.pdf', document.baseURI).href;
+        fetch(url).then(r => { if (!r.ok) throw 0; return r.blob(); }).then(b => {
+          const u = URL.createObjectURL(new Blob([b], { type: 'application/pdf' }));
+          const a = document.createElement('a');
+          a.href = u; a.download = 'Resume_Samuel_Petrony_Jr_2026.pdf';
+          document.body.appendChild(a); a.click(); a.remove();
+          setTimeout(() => URL.revokeObjectURL(u), 4000);
+        }).catch(() => { window.open(url, '_blank'); });
+      },
+      isLight: t === 'light', isDark: t === 'dark', isRetro: t === 'retro',
+      lightBg: st('light').bg, lightFg: st('light').fg,
+      darkBg: st('dark').bg, darkFg: st('dark').fg,
+      retroBg: st('retro').bg, retroFg: st('retro').fg,
+      setRetro: () => this.apply('retro', true),
+      setLight: () => this.apply('light', true),
+      setDark: () => this.apply('dark', true),
+      toolGroups: [
+        { brand: 'Microsoft', items: ['Microsoft 365 Copilot','Copilot Agents','Word Copilot','Outlook Copilot','PowerPoint Copilot','Power BI Copilot'] },
+        { brand: 'Anthropic', items: ['Claude Cowork','Claude Design','Claude Skills'] },
+        { brand: 'Google', items: ['Google Gemini','Google Gems','NotebookLM'] },
+        { brand: 'OpenAI', items: ['ChatGPT','Custom GPTs'] },
+        { brand: 'Meta', items: ['Meta AI','Meta Muse'] },
+        { brand: 'Suno', items: ['Suno'] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
