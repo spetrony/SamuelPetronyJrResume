@@ -57,23 +57,20 @@ img{display:block;max-width:100%;}
         <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:6px;">
           <a href="mailto:spetrony680@gmail.com" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:13px 20px;box-shadow:var(--bevel);background:var(--accent);color:var(--on-accent);" style-hover="opacity:.88;">Email me</a>
           <a href="https://linkedin.com/in/sampetronyjr" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:12px 19px;border:1px solid var(--line);background:var(--btn-bg);box-shadow:var(--bevel);color:var(--ink);" style-hover="border-color:var(--ink);">LinkedIn</a>
-          <a href="assets/Resume_Samuel_Petrony_Jr_2026.pdf" onClick="{{ downloadResume }}" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:12px 19px;border:1px solid var(--line);background:var(--btn-bg);box-shadow:var(--bevel);color:var(--ink);" style-hover="border-color:var(--ink);">Résumé PDF ↓</a>
+          <a href="./Resume_Samuel_Petrony_Jr_2026.pdf" onClick="{{ downloadResume }}" style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:12px 19px;border:1px solid var(--line);background:var(--btn-bg);box-shadow:var(--bevel);color:var(--ink);" style-hover="border-color:var(--ink);">Résumé PDF ↓</a>
         </div>
       </div>
       <figure style="margin:0;min-width:0;flex:1.4 1 360px;display:flex;flex-direction:column;gap:12px;">
-        <img src="assets/speaking.jpg" alt="Samuel presenting AI Adoption Unlocked at the Nashville Technology Council Innovation Summit" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:70% center;">
+        <img src="./speaking.jpg" alt="Samuel presenting AI Adoption Unlocked at the Nashville Technology Council Innovation Summit" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:70% center;">
         <figcaption style="font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.6;">“AI Adoption Unlocked” · Nashville Technology Council Innovation Summit</figcaption>
       </figure>
     </section>
 
     <div style="height:2px;background:var(--rule);"></div>
 
-
-
     <section id="about" style="padding:88px 0 24px;scroll-margin-top:72px;">
       <button onClick="{{ tog_about }}" aria-expanded="{{ open_about }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:40px;;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
         <h2 style="margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--ink);">About</h2>
-      
         <span style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:10px 16px;box-shadow:var(--bevel);align-self:center;flex:0 0 auto;white-space:nowrap;" style-hover="opacity:.88;">{{ lbl_about }}</span>
       </button>
       <sc-if value="{{ open_about }}" hint-placeholder-val="{{ true }}">
@@ -125,7 +122,7 @@ img{display:block;max-width:100%;}
     <section id="experience" style="padding:88px 0 24px;scroll-margin-top:72px;">
       <button onClick="{{ tog_experience }}" aria-expanded="{{ open_experience }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:8px;;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
         <h2 style="margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--ink);">Experience</h2>
-      
+        
         <span style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:10px 16px;box-shadow:var(--bevel);align-self:center;flex:0 0 auto;white-space:nowrap;" style-hover="opacity:.88;">{{ lbl_experience }}</span>
       </button>
       <sc-if value="{{ open_experience }}" hint-placeholder-val="{{ true }}">
@@ -295,7 +292,7 @@ img{display:block;max-width:100%;}
     <section id="expertise" style="padding:88px 0 24px;scroll-margin-top:72px;">
       <button onClick="{{ tog_expertise }}" aria-expanded="{{ open_expertise }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:40px;;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;">
         <h2 style="margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--ink);">Expertise</h2>
-      
+        
         <span style="display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:10px 16px;box-shadow:var(--bevel);align-self:center;flex:0 0 auto;white-space:nowrap;" style-hover="opacity:.88;">{{ lbl_expertise }}</span>
       </button>
       <sc-if value="{{ open_expertise }}" hint-placeholder-val="{{ true }}">
@@ -357,7 +354,7 @@ img{display:block;max-width:100%;}
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:40px 32px;">
 
         <a href="https://spetrony.github.io/XCBellCurce/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--text);" style-hover="color:var(--text);">
-          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="assets/xc-bell-curve.png" alt="Cross country z-score bell curve visualization" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left;transition:transform .5s;"></div>
+          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="./xc-bell-curve.png" alt="Cross country z-score bell curve visualization" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left;transition:transform .5s;"></div>
           <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">01 · Claude Cowork · Data</div>
           <h3 style="margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;color:var(--ink);">XC Bell Curve</h3>
           <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty;">Helping my son and his teammates understand race performance beyond their times. Z-scores normalize course conditions so every runner sees where they sit in the field.</p>
@@ -365,7 +362,7 @@ img{display:block;max-width:100%;}
         </a>
 
         <a href="https://spetrony.github.io/AB731StudyGuide/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--text);" style-hover="color:var(--text);">
-          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="assets/ab731.png" alt="AB-731 interactive study guide" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left;"></div>
+          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="./ab731.png" alt="AB-731 interactive study guide" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top left;"></div>
           <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">02 · Claude Cowork · Learning</div>
           <h3 style="margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;color:var(--ink);">AB-731 Study Guide</h3>
           <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty;">My study materials for the Microsoft Certified: AI Transformation Leader exam, turned into an interactive guide with domain breakdowns, flashcards, a practice quiz and glossary.</p>
@@ -373,7 +370,7 @@ img{display:block;max-width:100%;}
         </a>
 
         <a href="https://spetrony.github.io/ISS-Orbit-Animation/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--text);" style-hover="color:var(--text);">
-          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="assets/iss-orbit.png" alt="3D International Space Station orbit animation" style="width:100%;aspect-ratio:3/2;object-fit:cover;"></div>
+          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="./iss-orbit.png" alt="3D International Space Station orbit animation" style="width:100%;aspect-ratio:3/2;object-fit:cover;"></div>
           <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">03 · Claude Design · Just for fun</div>
           <h3 style="margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;color:var(--ink);">ISS Orbit Animation</h3>
           <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty;">An interactive 3D model of the International Space Station in low Earth orbit — built because I love space exploration and technology. Drag to orbit, follow the ISS, zoom in.</p>
@@ -381,7 +378,7 @@ img{display:block;max-width:100%;}
         </a>
 
         <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7487214012745588738/" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--text);" style-hover="color:var(--text);">
-          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="assets/gemini-scifi.png" alt="1950s sci-fi style video still: Samuel in a mind-reader helmet with the caption AI is not a mind reader" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 28%;"></div>
+          <div style="overflow:hidden;border:1px solid var(--line);background:var(--surface);"><img src="./gemini-scifi.png" alt="1950s sci-fi style video still: Samuel in a mind-reader helmet with the caption AI is not a mind reader" style="width:100%;aspect-ratio:3/2;object-fit:cover;object-position:center 28%;"></div>
           <div style="font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">04 · Google Gemini · Video</div>
           <h3 style="margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;color:var(--ink);">AI Is Not a Mind Reader</h3>
           <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty;">A short, 1950s sci-fi-themed, AI-generated video, using my own likeness and voice, as a fun way to explain why the Goal, Context, Sources, Expectations prompting framework matters when working with LLMs.</p>
@@ -399,7 +396,7 @@ img{display:block;max-width:100%;}
         <a href="mailto:spetrony680@gmail.com" style="font-family:var(--serif);font-size:clamp(28px,3vw,40px);line-height:1.1;color:var(--ink);text-decoration:none;word-break:break-word;" style-hover="color:var(--accent);">spetrony680@gmail.com</a>
         <div style="display:flex;gap:28px;flex-wrap:wrap;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;">
           <a href="https://linkedin.com/in/sampetronyjr" target="_blank" rel="noopener">linkedin.com/in/sampetronyjr</a>
-          <a href="assets/Resume_Samuel_Petrony_Jr_2026.pdf" onClick="{{ downloadResume }}">Download résumé</a>
+          <a href="./Resume_Samuel_Petrony_Jr_2026.pdf" onClick="{{ downloadResume }}">Download résumé</a>
           <span style="color:var(--muted);">Nashville, TN</span>
         </div>
       </div>
@@ -451,7 +448,7 @@ class Component extends DCLogic {
       ...sv,
       downloadResume: (e) => {
         e.preventDefault();
-        const url = new URL('assets/Resume_Samuel_Petrony_Jr_2026.pdf', document.baseURI).href;
+        const url = new URL('./Resume_Samuel_Petrony_Jr_2026.pdf', document.baseURI).href;
         fetch(url).then(r => { if (!r.ok) throw 0; return r.blob(); }).then(b => {
           const u = URL.createObjectURL(new Blob([b], { type: 'application/pdf' }));
           const a = document.createElement('a');
